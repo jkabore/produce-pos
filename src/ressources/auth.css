@@ -1,0 +1,19 @@
+.auth{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+   height: 100vh;
+   background-image: url(../ressources/auth.svg);
+   background-size: 100% 100%;
+}
+
+.auth ant-row{
+    width:100% !important;
+    justify-content: center;
+  
+}
+.auth form{
+   background-color: aliceblue;
+   padding: 20px!important;
+   width: 350px;
+}

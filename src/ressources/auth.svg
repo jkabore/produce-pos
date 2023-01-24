@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="1440" height="468" preserveAspectRatio="none" viewBox="0 0 1440 468">
+    <g mask="url(&quot;#SvgjsMask2289&quot;)" fill="none">
+        <rect width="1440" height="468" x="0" y="0" fill="url(#SvgjsLinearGradient2290)"></rect>
+        <path d="M55 468L523 0L854.5 0L386.5 468z" fill="url(#SvgjsLinearGradient2291)"></path>
+        <path d="M322.8 468L790.8 0L1183.8 0L715.8 468z" fill="url(#SvgjsLinearGradient2291)"></path>
+        <path d="M678.6 468L1146.6 0L1505.1 0L1037.1 468z" fill="url(#SvgjsLinearGradient2291)"></path>
+        <path d="M1378 468L910 0L853 0L1321 468z" fill="url(#SvgjsLinearGradient2292)"></path>
+        <path d="M1077.2 468L609.2 0L379.70000000000005 0L847.7 468z" fill="url(#SvgjsLinearGradient2292)"></path>
+        <path d="M767.4 468L299.4 0L162.89999999999998 0L630.9 468z" fill="url(#SvgjsLinearGradient2292)"></path>
+        <path d="M1201.9250276794073 468L1440 229.92502767940735L1440 468z" fill="url(#SvgjsLinearGradient2291)"></path>
+        <path d="M0 468L238.07497232059265 468L 0 229.92502767940735z" fill="url(#SvgjsLinearGradient2292)"></path>
+    </g>
+    <defs>
+        <mask id="SvgjsMask2289">
+            <rect width="1440" height="468" fill="#ffffff"></rect>
+        </mask>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" gradientUnits="userSpaceOnUse" id="SvgjsLinearGradient2290">
+            <stop stop-color="#0e2a47" offset="0"></stop>
+            <stop stop-color="rgba(36, 0, 158, 1)" offset="1"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="100%" x2="100%" y2="0%" id="SvgjsLinearGradient2291">
+            <stop stop-color="rgba(15, 70, 185, 0.2)" offset="0"></stop>
+            <stop stop-opacity="0" stop-color="rgba(15, 70, 185, 0.2)" offset="0.66"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="100%" x2="0%" y2="0%" id="SvgjsLinearGradient2292">
+            <stop stop-color="rgba(15, 70, 185, 0.2)" offset="0"></stop>
+            <stop stop-opacity="0" stop-color="rgba(15, 70, 185, 0.2)" offset="0.66"></stop>
+        </linearGradient>
+    </defs>
+</svg>
