@@ -41,7 +41,7 @@ const HomePage = () => {
   const getAllItems = () => {
     dispatch(showLoading(true));
     axios
-      .get("/api/items/all-items")
+      .get(`${process.env.REACT_APP_API}/api/items/all-items`)
       .then((response) => {
         const items = response.data;
 

@@ -22,12 +22,13 @@ const Customer = () => {
   });
   useEffect(() => {
     getAllBills();
+       // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getAllBills = () => {
     dispatch(showLoading(true));
     axios
-      .get("/api/all-bills")
+      .get(`${process.env.REACT_APP_API}/api/all-bills`)
       .then((response) => {
         const bills = response.data;
         //bills.reverse()

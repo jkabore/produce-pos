@@ -22,6 +22,7 @@ const Bills = () => {
 
   useEffect(() => {
     getAllBills();
+       // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handlePrint = useReactToPrint({
@@ -31,7 +32,7 @@ const Bills = () => {
   const getAllBills = () => {
     dispatch(showLoading(true));
     axios
-      .get("/api/all-bills")
+      .get(`${process.env.REACT_APP_API}/api/all-bills`)
       .then((response) => {
         const bills = response.data;
         dispatch(showLoading(false));

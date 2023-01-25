@@ -4,12 +4,11 @@ import { useDispatch } from "react-redux";
 import { addItems } from "../redux/slices/cartSlice";
 import axios from "axios";
 import DefaultLayout from "../components/DefaultLayout";
-import { showLoading, hideLoading } from "../redux/slices/cartSlice";
+import { showLoading } from "../redux/slices/cartSlice";
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { toast, ToastContainer } from "react-toastify";
 import { useSelector } from "react-redux";
 import Loader from "../components/Loader";
-
 
 const Items = ({ item }) => {
   const dispatch = useDispatch();
@@ -29,7 +28,7 @@ const Items = ({ item }) => {
   const getAllItems = () => {
     dispatch(showLoading(true));
     axios
-      .get("/api/items/all-items")
+      .get(`${process.env.REACT_APP_API}/api/items/all-items`)
       .then((response) => {
         const items = response.data;
 
@@ -46,7 +45,7 @@ const Items = ({ item }) => {
   const deleteItem = (record) => {
     dispatch(showLoading(true));
     axios
-      .post("/api/delete-item", { itemId: record._id })
+      .post(`${process.env.REACT_APP_API}/api/delete-item`, { itemId: record._id })
       .then((response) => {
         toast.success("Item deleted successfully !", {
           position: toast.POSITION.TOP_CENTER,
@@ -115,7 +114,7 @@ const Items = ({ item }) => {
     dispatch(showLoading(true));
     if (editingItem === null) {
       axios
-        .post("/api/add-item", values)
+        .post(`${process.env.REACT_APP_API}/api/add-item`, values)
         .then((response) => {
           dispatch(showLoading(false));
           toast.success("Item added successfully !", {
@@ -134,9 +133,9 @@ const Items = ({ item }) => {
         });
     } else {
       axios
-        .post("/api/edit-item", { ...values, itemId: editingItem._id })
+        .post(`${process.env.REACT_APP_API}/api/edit-item`, { ...values, itemId: editingItem._id })
         .then((response) => {
-          dispatch(hideLoading(false));
+          dispatch(showLoading(false));
           toast.success("Item edited successfully !", {
             position: toast.POSITION.TOP_CENTER,
           });
@@ -154,8 +153,8 @@ const Items = ({ item }) => {
         });
     }
   };
-  if(loading){
-    return <Loader/>
+  if (loading) {
+    return <Loader />;
   }
   return (
     <DefaultLayout>
