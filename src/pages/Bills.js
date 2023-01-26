@@ -32,7 +32,7 @@ const Bills = () => {
   const getAllBills = () => {
     dispatch(showLoading(true));
     axios
-      .get(`${process.env.REACT_APP_API}/api/all-bills`)
+      .get(`/api/bill/all-bills`)
       .then((response) => {
         const bills = response.data;
         dispatch(showLoading(false));

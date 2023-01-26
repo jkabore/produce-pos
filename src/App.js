@@ -7,6 +7,8 @@ import Items from "./pages/Items";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import PrivateRoute from "./components/PrivateRoute";
+
+
 function App() {
   return (
     <div className="App">
@@ -37,7 +39,7 @@ function App() {
             }
           />
           <Route path="/register" element={<Register />} />
-          <Route path="/"  element={<Login />} />
+          <Route path="/" element={<Login />} />
           <Route
             path="/customers"
             element={

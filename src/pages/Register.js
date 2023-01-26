@@ -18,7 +18,7 @@ const Register = () => {
   const onFinish = (values) => {
     dispatch(showLoading(true));
     axios
-      .post(`${process.env.REACT_APP_API}/api/register`, values)
+      .post(`/api/user/register`, values)
       .then((res) => {
         dispatch(showLoading(false));
         toast.success(

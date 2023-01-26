@@ -53,7 +53,7 @@ const CartPage = () => {
     console.log(reqObj);
 
     axios
-      .post(`${process.env.REACT_APP_API}/api/charge-bill`, reqObj)
+      .post(`/api/bill/charge-bill`, reqObj)
       .then((res) => {
         const data = res.data;
 
