@@ -28,7 +28,7 @@ const Items = ({ item }) => {
   const getAllItems = () => {
     dispatch(showLoading(true));
     axios
-      .get(`/api/item/items/all-items`)
+      .get(`${process.env.REACT_APP_API}/api/item/items/all-items`)
       .then((response) => {
         const items = response.data;
 
@@ -45,7 +45,7 @@ const Items = ({ item }) => {
   const deleteItem = (record) => {
     dispatch(showLoading(true));
     axios
-      .post(`/api/item/delete-item`, { itemId: record._id })
+      .post(`${process.env.REACT_APP_API}/api/item/delete-item`, { itemId: record._id })
       .then((response) => {
         toast.success("Item deleted successfully !", {
           position: toast.POSITION.TOP_CENTER,
@@ -114,7 +114,7 @@ const Items = ({ item }) => {
     dispatch(showLoading(true));
     if (editingItem === null) {
       axios
-        .post(`/api/item/add-item`, values)
+        .post(`${process.env.REACT_APP_API}/api/item/add-item`, values)
         .then((response) => {
           dispatch(showLoading(false));
           toast.success("Item added successfully !", {
@@ -133,7 +133,7 @@ const Items = ({ item }) => {
         });
     } else {
       axios
-        .post(`/api/item/edit-item`, { ...values, itemId: editingItem._id })
+        .post(`${process.env.REACT_APP_API}/api/item/edit-item`, { ...values, itemId: editingItem._id })
         .then((response) => {
           dispatch(showLoading(false));
           toast.success("Item edited successfully !", {

@@ -8,7 +8,7 @@ import "../ressources/items.css";
 import Item from "../components/Items";
 import { useSelector } from "react-redux";
 import Loader from "../components/Loader";
-import { showLoading } from "../redux/slices/cartSlice";
+import { showLoading} from "../redux/slices/cartSlice";
 const HomePage = () => {
   const [itemData, setData] = useState([]);
   const [selectedCategory, setCategory] = useState("fruits");
@@ -34,14 +34,14 @@ const HomePage = () => {
   ];
   useEffect(() => {
     getAllItems();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const dispatch = useDispatch();
 
   const getAllItems = () => {
     dispatch(showLoading(true));
     axios
-      .get(`/api/item/items/all-items`)
+      .get(`${process.env.REACT_APP_API}/api/item/items/all-items`)
       .then((response) => {
         const items = response.data;
 
@@ -53,8 +53,8 @@ const HomePage = () => {
         console.log(err);
       });
   };
-  if (loading) {
-    return <Loader />;
+  if(loading){
+    return <Loader/>
   }
   return (
     <DefaultLayout>

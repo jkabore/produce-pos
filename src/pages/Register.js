@@ -5,7 +5,7 @@ import { toast, ToastContainer } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import "../ressources/auth.css";
 import { useDispatch } from "react-redux";
-import { showLoading,  } from "../redux/slices/cartSlice";
+import { showLoading } from "../redux/slices/cartSlice";
 import { useSelector } from "react-redux";
 import Loader from "../components/Loader";
 
@@ -18,7 +18,7 @@ const Register = () => {
   const onFinish = (values) => {
     dispatch(showLoading(true));
     axios
-      .post(`/api/user/register`, values)
+      .post(`${process.env.REACT_APP_API}/api/user/register`, values)
       .then((res) => {
         dispatch(showLoading(false));
         toast.success(
@@ -37,8 +37,8 @@ const Register = () => {
         console.log(err);
       });
   };
-  if(loading){
-    return <Loader/>
+  if (loading) {
+    return <Loader />;
   }
   return (
     <div className="auth">
