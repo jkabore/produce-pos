@@ -13,6 +13,7 @@ const Register = () => {
   const loading = useSelector((state) => {
     return state.cart.loading;
   });
+  
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const onFinish = (values) => {
