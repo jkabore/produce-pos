@@ -19,7 +19,7 @@ const Login = () => {
   const onFinish = (values) => {
     dispatch(showLoading(true));
     axios
-      .post(`${process.env.REACT_APP_API}/api/user/login`, values)
+      .post(`https://pos-server-zkti.onrender.com/api/user/login`, values)
       .then((res) => {
         localStorage.setItem("pos-user", JSON.stringify(res.data));
         dispatch(showLoading(false));

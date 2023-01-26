@@ -41,7 +41,7 @@ const HomePage = () => {
   const getAllItems = () => {
     dispatch(showLoading(true));
     axios
-      .get(`${process.env.REACT_APP_API}/api/item/items/all-items`)
+      .get(`https://pos-server-zkti.onrender.com/api/item/items/all-items`)
       .then((response) => {
         const items = response.data;
 

@@ -19,7 +19,7 @@ const Register = () => {
   const onFinish = (values) => {
     dispatch(showLoading(true));
     axios
-      .post(`${process.env.REACT_APP_API}/api/user/register`, values)
+      .post(`https://pos-server-zkti.onrender.com/api/user/register`, values)
       .then((res) => {
         dispatch(showLoading(false));
         toast.success(

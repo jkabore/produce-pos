@@ -32,7 +32,7 @@ const Bills = () => {
   const getAllBills = () => {
     dispatch(showLoading(true));
     axios
-      .get(`${process.env.REACT_APP_API}/api/bill/all-bills`)
+      .get(`https://pos-server-zkti.onrender.com/api/bill/all-bills`)
       .then((response) => {
         const bills = response.data;
         dispatch(showLoading(false));

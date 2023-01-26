@@ -53,7 +53,7 @@ export const cartSlice = createSlice({
         }
         localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
         return state;
-        <ToastContainer />;
+     
       });
     },
     //   ======= clear cart====

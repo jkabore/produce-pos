@@ -53,7 +53,7 @@ const CartPage = () => {
     console.log(reqObj);
 
     axios
-      .post(`${process.env.REACT_APP_API}/api/bill/charge-bill`, reqObj)
+      .post(`https://pos-server-zkti.onrender.com/api/bill/charge-bill`, reqObj)
       .then((res) => {
         const data = res.data;
 
