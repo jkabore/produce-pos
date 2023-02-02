@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col } from "antd";
 import axios from "axios";
-
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import DefaultLayout from "../components/DefaultLayout";
 import "../ressources/items.css";
 import Item from "../components/Items";
 import { useSelector } from "react-redux";
 import Loader from "../components/Loader";
-import { showLoading} from "../redux/slices/cartSlice";
+import { showLoading } from "../redux/slices/cartSlice";
 const HomePage = () => {
   const [itemData, setData] = useState([]);
   const [selectedCategory, setCategory] = useState("fruits");
   const loading = useSelector((state) => {
     return state.cart.loading;
   });
+  const navigate = useNavigate();
   const categories = [
     {
       name: "fruits",
@@ -33,8 +34,10 @@ const HomePage = () => {
     },
   ];
   useEffect(() => {
+    navigate(0);
+
     getAllItems();
-     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const dispatch = useDispatch();
 
@@ -53,8 +56,8 @@ const HomePage = () => {
         console.log(err);
       });
   };
-  if(loading){
-    return <Loader/>
+  if (loading) {
+    return <Loader />;
   }
   return (
     <DefaultLayout>
