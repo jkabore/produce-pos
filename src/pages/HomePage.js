@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col } from "antd";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+
 import { useDispatch } from "react-redux";
 import DefaultLayout from "../components/DefaultLayout";
 import "../ressources/items.css";
@@ -15,9 +15,7 @@ const HomePage = () => {
   const loading = useSelector((state) => {
     return state.cart.loading;
   });
- 
-  const navigate = useNavigate();
-  // navigate(0);
+
   const categories = [
     {
       name: "fruits",
@@ -36,8 +34,6 @@ const HomePage = () => {
     },
   ];
   useEffect(() => {
-    
-
     getAllItems();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [itemData]);

@@ -3,7 +3,7 @@ import axios from "axios";
 import { Button, Form, Input} from "antd";
 import { toast, ToastContainer } from "react-toastify";
 import "../ressources/auth.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import { showLoading } from "../redux/slices/cartSlice";
@@ -14,7 +14,7 @@ const Login = () => {
     return state.cart.loading;
   });
 
-  const navigate = useNavigate();
+  
   const dispatch = useDispatch();
   const onFinish = (values) => {
     dispatch(showLoading(true));
@@ -22,12 +22,11 @@ const Login = () => {
       .post(`https://pos-server-zkti.onrender.com/api/user/login`, values)
       .then((res) => {
         localStorage.setItem("pos-user", JSON.stringify(res.data));
-       
+        dispatch(showLoading(false));
         toast.success("successfully logged in!", {
           position: toast.POSITION.TOP_CENTER,
         });
-        navigate("/home");
-        dispatch(showLoading(false));
+        window.location.assign("/home");
       })
       .catch((err) => {
         dispatch(showLoading(true));
