@@ -30,11 +30,11 @@ const Login = () => {
       })
       .catch((err) => {
         dispatch(showLoading(true));
-        console.log(err);
-        toast.error("Something went wrong !", {
+        //console.log(err);
+        toast.error(`${err.message}`, {
           position: toast.POSITION.TOP_CENTER,
         });
-        //console.log(err);
+        console.log(err);
       });
   };
   if (loading) {
