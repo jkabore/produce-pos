@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { Button, Form, Input, Row, Col } from "antd";
-import { toast, ToastContainer } from "react-toastify";
+import { toast,} from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import "../ressources/auth.css";
 import { useDispatch } from "react-redux";
@@ -23,7 +23,7 @@ const Register = () => {
       .then((res) => {
         dispatch(showLoading(false));
         toast.success(
-          "successfully registered ! Please wait for verification",
+          "successfully registered ! ",
           {
             position: toast.POSITION.TOP_CENTER,
           }

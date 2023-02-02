@@ -18,9 +18,7 @@ const Items = ({ item }) => {
   });
   const [itemData, setData] = useState([]);
   const [modalVisibilty, setModalVisibility] = useState(false);
-  const addToCart = () => {
-    dispatch(addItems(item));
-  };
+
   useEffect(() => {
     getAllItems();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -45,7 +43,9 @@ const Items = ({ item }) => {
   const deleteItem = (record) => {
     dispatch(showLoading(true));
     axios
-      .post(`https://pos-server-zkti.onrender.com/api/item/delete-item`, { itemId: record._id })
+      .post(`https://pos-server-zkti.onrender.com/api/item/delete-item`, {
+        itemId: record._id,
+      })
       .then((response) => {
         toast.success("Item deleted successfully !", {
           position: toast.POSITION.TOP_CENTER,
@@ -133,7 +133,10 @@ const Items = ({ item }) => {
         });
     } else {
       axios
-        .post(`https://pos-server-zkti.onrender.com/api/item/edit-item`, { ...values, itemId: editingItem._id })
+        .post(`https://pos-server-zkti.onrender.com/api/item/edit-item`, {
+          ...values,
+          itemId: editingItem._id,
+        })
         .then((response) => {
           dispatch(showLoading(false));
           toast.success("Item edited successfully !", {

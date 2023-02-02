@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Button, Form, Input, Select } from "antd";
+import { Button, Form, Input} from "antd";
 import { toast, ToastContainer } from "react-toastify";
 import "../ressources/auth.css";
 import { Link, useNavigate } from "react-router-dom";
@@ -48,7 +48,7 @@ const Login = () => {
         //initialValues={editingItem}
         onFinish={onFinish}
       >
-        <h1>
+        <h1 className="mt-5">
           <b>PRODUCE POS</b>
         </h1>
         <hr />

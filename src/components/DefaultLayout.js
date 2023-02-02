@@ -14,7 +14,8 @@ import {
 import { useSelector } from "react-redux";
 import { Layout, Menu } from "antd";
 import "../ressources/layout.css";
-import {  useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+
 
 const { Header, Sider, Content } = Layout;
 
@@ -25,7 +26,8 @@ const DefaultLayout = ({ children }) => {
   const cartItems = useSelector((state) => {
     return state.cart.cartItems;
   });
-
+ 
+ 
   useEffect(() => {}, [cartItems]);
   useEffect(() => {
     const pathName = location.pathname;
@@ -33,16 +35,14 @@ const DefaultLayout = ({ children }) => {
   }, [location.pathname]);
   const navigate = useNavigate();
 
-
- 
   return (
     <Layout>
       <Sider
         trigger={null}
         collapsible
         collapsed={collapsed}
-        collapsedWidth="0"
-        breakpoint={"lg"}
+        collapsedWidth={0}
+        breakpoint={"xs"}
       >
         <div className="logo">
           <h3>{collapsed ? "PP" : "Produce Pos"}</h3>
@@ -52,11 +52,12 @@ const DefaultLayout = ({ children }) => {
           mode="inline"
           onClick={(item) => {
             //item.key
-         if(item.key === "/logout"){
-          localStorage.removeItem("pos-user");
-          navigate("/");
-         }else{
-            navigate(item.key)}
+            if (item.key === "/logout") {
+              localStorage.removeItem("pos-user");
+              navigate("/");
+            } else {
+              navigate(item.key);
+            }
           }}
           selectedKeys={[selectedKeys]}
           items={[
@@ -93,7 +94,6 @@ const DefaultLayout = ({ children }) => {
               key: "/logout",
               icon: <LogoutOutlined />,
               label: "Logout",
-             
             },
           ]}
         />

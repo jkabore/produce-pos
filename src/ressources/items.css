@@ -40,13 +40,13 @@ input:focus{
 .category{
     border: 2px solid rgb(179, 176, 176) !important;
     align-items: center;
-    margin-right: 50px;
+    margin-right: 10px;
     padding-left: 25px;
     border-radius: 10px;
    cursor: pointer;
 }
 .category h4{
-    margin-right:25px;
+    margin-right:5px;
 }
 .category img{
     border-bottom-right-radius: 10px;
@@ -92,6 +92,13 @@ font-size: 30px;
             margin-bottom:20px !important;
             overflow-x: scroll;
             width: "100%";
+            overscroll-behavior-x: auto;
+            scrollbar-width: 0px!important; 
+            
+         
+        }
+        .cat::-webkit-scrollbar{
+            display: none;
         }
 
     }
@@ -99,11 +106,16 @@ font-size: 30px;
         .ant-layout-sider{
            max-width: 80px !important;
         }
-    
+      
     }
     @media only screen and (max-width>600px){
         .ant-layout-sider{
            max-width:'100%';
         }
+      
+    }
     
+    .ant-layout-sider-children {
+        height: 0vh !important; 
+         padding: 0px !important; 
     }

@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { Table } from "antd";
 import { useDispatch } from "react-redux";
-//import { addItems } from "../redux/slices/cartSlice";
+
 import axios from "axios";
 import DefaultLayout from "../components/DefaultLayout";
 import { showLoading } from "../redux/slices/cartSlice";
@@ -13,10 +13,9 @@ import Loader from "../components/Loader";
 
 const Customer = () => {
   const dispatch = useDispatch();
-  const [editingItem, setEditingItem] = useState(null);
-  const componentRef = useRef();
+  
   const [billData, setBill] = useState([]);
-  const [billModal, setModal] = useState(false);
+ 
   const loading = useSelector((state) => {
     return state.cart.loading;
   });

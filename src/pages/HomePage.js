@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col } from "antd";
 import axios from "axios";
-import { uuid } from "uuidv4";
+
 import { useDispatch } from "react-redux";
 import DefaultLayout from "../components/DefaultLayout";
 import "../ressources/items.css";
@@ -74,7 +74,7 @@ const HomePage = () => {
           );
         })}
       </div>
-      <Row gutter={20}>
+      <Row gutter={18}>
         {itemData
           .filter((i) => i.category === selectedCategory)
           .map((item) => (
