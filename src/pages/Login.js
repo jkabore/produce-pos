@@ -22,11 +22,12 @@ const Login = () => {
       .post(`https://pos-server-zkti.onrender.com/api/user/login`, values)
       .then((res) => {
         localStorage.setItem("pos-user", JSON.stringify(res.data));
-        dispatch(showLoading(false));
+       
         toast.success("successfully logged in!", {
           position: toast.POSITION.TOP_CENTER,
         });
         navigate("/home");
+        dispatch(showLoading(false));
       })
       .catch((err) => {
         dispatch(showLoading(true));

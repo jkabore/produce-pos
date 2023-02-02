@@ -15,7 +15,9 @@ const HomePage = () => {
   const loading = useSelector((state) => {
     return state.cart.loading;
   });
+ 
   const navigate = useNavigate();
+  // navigate(0);
   const categories = [
     {
       name: "fruits",
@@ -34,11 +36,11 @@ const HomePage = () => {
     },
   ];
   useEffect(() => {
-    navigate(0);
+    
 
     getAllItems();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [itemData]);
   const dispatch = useDispatch();
 
   const getAllItems = () => {
