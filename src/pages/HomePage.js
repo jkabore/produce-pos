@@ -36,7 +36,7 @@ const HomePage = () => {
   useEffect(() => {
     getAllItems();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [itemData]);
+  }, []);
   const dispatch = useDispatch();
 
   const getAllItems = () => {
